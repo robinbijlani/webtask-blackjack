@@ -14,7 +14,7 @@ class Card {
 
   value() {
     if (this.rank === "Ace") {
-      return 'Ace';
+      throw new Error("Can't retrieve the value of an Ace by itself, it must be evaluated within a Hand.");
     }
 
     if (typeof this.rank === "number") {
