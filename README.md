@@ -2,7 +2,8 @@
 
 This is a very simple text-based Blackjack implementation leveraging [Webtask.io](https://webtask.io). 
 
-You can check out a demo at this URL:[https://wt-94c7490d7ac08da4818a46c96cca2c6e-0.sandbox.auth0-extend.com/webtask-blackjack](https://wt-94c7490d7ac08da4818a46c96cca2c6e-0.sandbox.auth0-extend.com/webtask-blackjack)
+You can check out a demo at this URL:
+[https://wt-94c7490d7ac08da4818a46c96cca2c6e-0.sandbox.auth0-extend.com/webtask-blackjack](https://wt-94c7490d7ac08da4818a46c96cca2c6e-0.sandbox.auth0-extend.com/webtask-blackjack)
 
 ## Game Logic
 
