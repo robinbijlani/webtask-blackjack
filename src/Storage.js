@@ -1,23 +1,22 @@
-const Promise = require('bluebird').Promise;
+const Promise = require("bluebird").Promise;
 let store;
 
 module.exports = {
-  init: (storage) =>
-    store = storage,
+  init: storage => (store = storage),
 
-  getStoredData: () =>
+  get: () =>
     new Promise((resolve, reject) =>
       store.get((err, data) => {
         if (err) return reject(err);
         resolve(data || {});
       })
-  ),
+    ),
 
-  storeData: (data) =>
+  set: data =>
     new Promise((resolve, reject) =>
-      store.set(data, {force: 1}, err => {
+      store.set(data, { force: 1 }, err => {
         if (err) return reject(err);
         resolve();
       })
-  )
+    )
 };
