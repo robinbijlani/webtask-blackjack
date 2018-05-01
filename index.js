@@ -56,7 +56,6 @@ module.exports = function(ctx, req, res) {
             game.stand();
             return deleteAndSummarize(data, game, res);
       }
-      
 
     })
     .catch(err => res.end("ERROR: " + err.message));

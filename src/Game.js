@@ -10,35 +10,32 @@ class Game {
       this.player = new Hand(stored.player.cards);
       this.dealer = new Hand(stored.dealer.cards);
     } else {
-      this.id = Math.random()
-        .toString(36)
-        .substring(7);
+      this.id = Math.random().toString(36).substring(7);
       this.winner = null;
       this.deck = new Deck();
       this.deck.shuffle();
-
       this.player = new Hand(this.deck.deal(2));
       this.dealer = new Hand(this.deck.deal(1));
     }
   }
 
   summary() {
-    let s = `Game ID: ${this.id}<br><br>
-Your hand contains ${this.player.string()}.<br><br>
-You have a total of ${this.player.total()}.<br><br>
-The dealer's hand contains ${this.dealer.string()}.<br><br>
-The dealer has a total of ${this.dealer.total()}.<br><br>`;
+    let s = `Game ID: ${this.id}<br><br>`;
+    s += `Your hand contains ${this.player.string()}.<br><br>`;
+    s += `You have a total of ${this.player.total()}.<br><br>`;
+    s += `The dealer's hand contains ${this.dealer.string()}.<br><br>`;
+    s += `The dealer has a total of ${this.dealer.total()}.<br><br>`;
 
     switch (this.isComplete()) {
       case true:
-        s += `The winner is ${this.winner}.<br><br>
-            <a href="/webtask-blackjack">Let's play again</a>`;
+        s += `The winner is ${this.winner}.<br><br>`;
+        s +=  `<a href="/webtask-blackjack">Let's play again</a>`;
         break;
       default:
-        s += `<a href="/webtask-blackjack?id=${this
-          .id}&action=hit">HIT me with another card, dealer.</a><br><br>
-<a href="/webtask-blackjack?id=${this
-          .id}&action=stand">Enough for me. I will STAND.</a><br><br>`;
+        s += `<a href="/webtask-blackjack?id=${this.id}&action=hit">`;
+        s += `HIT me with another card, dealer.</a><br><br>`;
+        s += `<a href="/webtask-blackjack?id=${this.id}&action=stand">`;
+        s += `Enough for me. I will STAND.</a><br><br>`;
     }
 
     return s;
